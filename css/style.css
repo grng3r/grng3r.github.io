@@ -3,7 +3,12 @@ body{
 	background-color: #49483e;
 }
 
-.about{
+#articles{
 	color: #308c64;
 	background-color: #000000;
+}
+
+#branding{
+	background-color:#000000;
+	color: #308c64;
 }
