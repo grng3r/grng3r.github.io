@@ -6,9 +6,17 @@ body{
 #articles{
 	color: #308c64;
 	background-color: #000000;
+	border-width: 2px 0 2px 0;
+	border-image: linear-repeating-gradient(left, black 10% white 30%);
+
+	width: 80%;
+	height: 80%;
 }
 
 #branding{
 	background-color:#000000;
 	color: #308c64;
+	border : 1px gray dotted;
+
 }
+
