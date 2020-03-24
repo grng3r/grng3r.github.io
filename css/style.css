@@ -6,7 +6,7 @@ body{
 #articles{
 	color: #308c64;
 	background-color: #000000;
-	border-width: 2px 0 2px 0;
+	border-width: 10px 0 10px 0;
 	border-image: linear-repeating-gradient(left, black 10% white 30%);
 
 	width: 80%;
