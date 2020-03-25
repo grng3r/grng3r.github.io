@@ -1,6 +1,6 @@
 @font-face{
 	font-family:"cyberpunk";
-	src:url('https://grng3r.github.io/content/fonts/CIND.otf')
+	src:url('https://grng3r.github.io/content/fonts/CIND.otf') format('opentype');
 }
 body{
 	color: #9fffab;
