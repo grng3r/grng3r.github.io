@@ -1,10 +1,13 @@
 @font-face{
 	font-family:"cyberpunk";
-	src:url('https://grng3r.github.io/content/fonts/CIND.otf') format('opentype');
+	src:url('./content/fonts/CIND.otf') format('opentype');
 }
 body{
 	color: #9fffab;
 	background-color: #49483e;
+	max-width: 70%;
+	border-top: 2px #9fffab dotted;
+
 }
 
 #about{
@@ -40,7 +43,7 @@ body{
 
 header{
 	color: #9fffab;
-	min-height: 20px;
+	min-height: 15px;
 	padding-bottom: 20px; 
 
 }
