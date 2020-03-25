@@ -3,6 +3,7 @@
 	src:url('./content/fonts/CIND.otf') format('opentype');
 }
 body{
+	font-family: "cyberpunk";
 	color: #9fffab;
 	background-color: #49483e;
 	max-width: 70%;
@@ -43,6 +44,7 @@ body{
 
 
 header{
+	font-family="cyberpunk"
 	color: #9fffab;
 	min-height: 15px;
 	padding-bottom: 20px; 
