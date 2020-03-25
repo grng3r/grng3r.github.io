@@ -7,7 +7,6 @@ body{
 	color: #9fffab;
 	background-color: #49483e;
 	max-width: 70%;
-	border-top: 2px #9fffab dashed;
 	padding: 30px 20px 0 10px;
 
 }
@@ -67,7 +66,7 @@ header{
 	padding-left: 10px;
 	border-left: 2px #9fffab dashed;
 	border-bottom: 2px #9fffab dashed;
-
+	border-top: 2px #9fffab dashed;
 }
 
 header a{
