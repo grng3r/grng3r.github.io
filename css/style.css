@@ -1,22 +1,84 @@
+@font-face{
+	font-family:"cyberpunk";
+	src:url('https://grng3r.github.io/content/fonts/CIND.otf')
+}
 body{
-	color: #308c77;
+	color: #9fffab;
 	background-color: #49483e;
 }
 
-#articles{
-	color: #308c64;
-	background-color: #000000;
-	border-image:repeating-linear-gradient(white, black, 3px, 6px);
-	border-width: 5px;
-
-	width: 80%;
-	height: 80%;
+#about{
+	border-left : 2px #9fffab dotted;
+	border-bottom : 2px #9fffab dotted;
+	padding: 30px 10px 30px 10px;;
 }
 
-#branding{
-	background-color:#000000;
-	color: #308c64;
-	border : 1px gray dotted;
+#about img{
+	width: 100%;
+	max-width: 200px;
+	height: auto;
 
+}
+
+.about_txt{
+	font-size: medium;
+}
+
+.about_txt h3{
+	font-size: large;
+}
+
+
+#news{
+	border-left : 2px #9fffab dotted;
+	border-bottom : 2px #9fffab dotted;
+	padding: 10px;
+}
+
+
+
+
+header{
+	color: #9fffab;
+	min-height: 20px;
+	padding-bottom: 20px; 
+
+}
+
+header a{
+	color:#9fffab;
+	text-decoration:none;
+	text-transform: lowercase;
+	font-size: 16px;
+}
+header p{
+	font-size: xx-small;
+}
+
+header ul{
+	margin: 0;
+	padding:0;
+}
+
+header h3{
+	float: left;
+	padding: 20px 50px 0 10px;
+	margin:0;
+}
+header nav{
+	float: right;
+}
+
+header li{
+	float: right;
+	display: inline;
+	padding: 0 10px 0 10px;
+}
+
+
+header img{
+	width: 100%;
+	max-width: 20px;
+	height: auto;
 }
 
