@@ -5,16 +5,18 @@
 body{
 	font-family: "cyberpunk";
 	color: #9fffab;
-	background-color: #49483e;
-	max-width: 70%;
+	background-color: #424242;
+	max-width: 100%;
 	padding: 30px 20px 0 10px;
-
+	height: auto;
 }
 
 #about{
 	border-left : 2px #9fffab dashed;
 	border-bottom : 2px #9fffab dashed;
 	padding: 30px 10px 30px 10px;;
+	max-width: 90%;
+	height: auto;
 }
 
 #about img{
@@ -41,6 +43,8 @@ body{
 	border-bottom : 2px #9fffab dashed;
 	padding-top: 10px;
 	padding-left:10px;
+	max-width: 90%;
+	height: auto;
 }
 
 .news1{
@@ -56,7 +60,26 @@ body{
 
 }
 
+.contact{
+	width: 90%;
+	height: auto%;
+	border-bottom: 2px #9fffab dashed;
+	border-left: 2px #9fffab dashed;
 
+	padding-left: 10px;
+	padding-top: 30px;
+}
+
+.contact h4{
+	font-family: Tahoma, Geneva, sans-serif;
+	text-decoration: none;
+	color:#9fffab;
+}
+
+.contact a{
+	text-decoration: none;
+	color: #9fffab;
+}
 
 header{
 	font-family="cyberpunk"
@@ -67,6 +90,7 @@ header{
 	border-left: 2px #9fffab dashed;
 	border-bottom: 2px #9fffab dashed;
 	border-top: 2px #9fffab dashed;
+	background-color:#424242;
 }
 
 header a{
