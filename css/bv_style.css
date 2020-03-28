@@ -1,0 +1,106 @@
+@font-face{
+	font-family:"cyberpunk";
+	src:url('../content/fonts/CIND.otf') format('opentype');
+}
+body{
+	font-family: "cyberpunk";
+	color: #9fffab;
+	background-color: #424242;
+	max-width: 100%;
+	padding: 30px 20px 0 10px;
+	height: auto;
+}
+
+.zine{
+	border-left : 2px #9fffab dashed;
+	border-bottom : 2px #9fffab dashed;
+	padding-top: 10px;
+	padding-left:10px;
+	max-width: 90%;
+	height: auto;
+}
+
+.br10{
+	padding-top: 30px;
+	padding-left: 10px;
+}
+
+.br10 a {
+	text-decoration: none;	
+}
+
+#news{
+	border-left : 2px #9fffab dashed;
+	border-bottom : 2px #9fffab dashed;
+	padding-top: 10px;
+	padding-left:10px;
+	max-width: 90%;
+	height: auto;
+}
+
+.news1{
+	padding-top: 30px;
+	padding-left: 10px;
+	border-bottom: 2px #9fffab dotted;
+}
+
+
+.news2{
+	padding-top: 10px;
+	padding-left: 10px;
+
+}
+
+
+header{
+	font-family="cyberpunk"
+	color: #9fffab;
+	min-height: 15px;
+	padding-bottom: 20px; 
+	padding-left: 10px;
+	border-left: 2px #9fffab dashed;
+	border-bottom: 2px #9fffab dashed;
+	border-top: 2px #9fffab dashed;
+	background-color:#424242;
+}
+
+header a{
+	color:#9fffab;
+	text-decoration:none;
+	text-transform: lowercase;
+	font-size: 16px;
+}
+header p{
+	font-size: xx-small;
+	padding:0;
+	margin:0;
+	text-align: left;
+}
+
+header ul{
+	margin: 0;
+	padding:0;
+}
+
+header a{
+	text-decoration: none;
+}
+header nav{
+	float: right;
+}
+
+header li{
+	font-family: Tahoma, Geneva, sans-serif;
+	float: right;
+	display: inline;
+	padding: 0 10px 0 10px;
+	font-size: xx-small;
+}
+
+
+header img{
+	width: 100%;
+	max-width: 20px;
+	height: auto;
+}
+
