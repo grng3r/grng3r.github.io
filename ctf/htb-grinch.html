@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset='utf-8'>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="Content-Security-Policy" content="default-src 'self'">
+		<meta name="keywords" content="ctf, c, rust, python, linux, code, developer, penetration testing, system">
+		<title>gr@ng3r's Page/CTF/HTB-Grinch </title>
+		<link rel= "stylesheet" href="../css/style.css">
+</head>
+	<body>
+		<header>
+			<a href='https://grng3r.github.io'>
+			<pre>
+                       ___ /       
+  _` |  __| __ \   _` |  _ \   __| 
+ (   | |    |   | (   |   ) | |    
+\__, |_|   _|  _|\__, |____/ _|    
+|___/            |___/         </pre>
+			</a>
+			<nav class="menu">
+				<li><a href="">Software / </a></li>
+				<li><a href="">Hardware / </a></li>
+				<li><a href="">CTF /</a></li>
+				<li><a href="">Random_Stuff /</a></li>
+				<li><a href='https://grng3r.github.io/beta_vulgaris'>Beta Vulgaris / </a></li>
+			</nav>
+		</header>
+		<section id="article">
+			<div class="article">
+				<h2>Hack_The_Box/Grinch_Xmas_CTF</h2>
+				<p>
+				<article>
+					This was a Christmas themed CTF, so the writeup is done in that style. This was my first web CTF, I started it late so I used it as a learning experience and not a competition with other people. I have completed most of it with some tips from the HackerOne discord community. P.S Unfortunatelly I have no pictures from this event. I also did not keep all of the vulnerable code unfortunatelly.
+
+					<h3>Intro</h3>
+					It was 8 days before Christmas of 2020 when I've seen alerts from my friends, fellow members of Santa's army, about Grinches plan to spoil Christmas. There was a sence of urgency since I was late to the rescue mission and all I've received was a link to the hackyholidays webpage, Grinches tool to gather his army. 
+					I was worried, late for the mission and not my area of expertise. Over the last few months I've been working on binary file hacking, cryptography and infosec since I've been busy testing some new products the elfs were developing and securing the areaSantas raindeer live in, but even so I had a duty to fullfill so I joined in.
+				</article>
+				<article>
+					<h3>Flag 1</h3>
+					Who was this Grinch guy? His home page presented a get out message and thinking of his goal to ruin Christmas gave impressions of a very rude guy. I've decided to have a look at robots.txt, a page used by developers to restrict access to certain webpages. The first flag was there, that was easy, there was also a clue pointing to /s3cr3t-ar3a page so I went there.
+
+					<h3>Flag 2</h3>
+					The web page printed out a restricted area type message. That is a lot of restrictions with this Grinch guy. Maybe he's just angry because he is lonely, but one thing is certain he was sloppy, because this next flag was found inspecting the page html.
+					It was found in the div tag with the id "alertbox" as the value of data-info.
+					<h3>Flag 3</h3>
+					Now lets check Grinches apps, this guy was sloppy on the front end, but he still had a bunch of apps at his disposal. His first app was the people rater and wow, this guy did not like a single person. He left the code of his app available for us to see. It easy to see that the function to retrieve info about a person required a string as the value of the id parameter, that string was base64 encoded as well. The data about the people could be received in json format as well and each set of people was identifiable by an id. Since our clue was that there are entries that shouldn't be there. I encoded {"id": 1} to get the full url of:
+					hackyholidays.h1ctf/people-rater/entry?id=eyJpZCI6MXO=
+					 -->which returns our flags.
+					
+					<h3>Flag 4</h3>
+					Obviusly an operation as large as stopping Christmas needs a way of being financed, so Grinch developed a webshop. Santas intel on it was to try and pull  Grinches personal details somehow.
+					From the code in the html I realised that there was an API behind the swag shop, so I did some API endpoint fuzzing. One endpoint responded, the /api/user returned a missing required field message in JSON format. I have then decided to use the Arjun tool for parameter discovery, the ?uuid= parameter was required. Afterb guessing Grinches uuid we where able to retrieve his info and the flag.
+					<h3>Flag 5</h3>
+					The starting point of this app was the requirment to bruteforce an html form. Grinch made a mistake of informing the user what did he enter wrong exactly, the username or the password.
+					The tool used to bruteforce while keepig in mind the error messages was Burp Turbo Intruder with a custom python script and a wordlist. After logging in I have checked the cookie, which was a base64 encoded string containing admin=false. We edit it to admin=true, base64 encode it and send a request back with that cookie in the header. This allowed us to download a password protected zip file, after bruteforcing again with a custom script we were able to get the flag.
+					<h3>Flag 6</h3>
+					The goal to get another win over Grinch was not overthinking. It seemed that the entire mission was like that. We could see from our first request that we were redirected to entry.html page through the template URL parameter. I have also tried accesing files on the server without that parameter and discovered the index.html page which enabled us to see the main functionality of the php code that ran the template engine. We could also find out about the existance of secretadmin.php where the admin page was moved to. The trick was in bypassing the IP address check so we can visit the secretadmin.php and bypassing the URL sanitizer.
+					We were able to get the flage with .../index.php?template=secretsecretadmin.phpadmin.phpadmin.php 
+					The payload bypassed the sanity check for secretadmin.php and admin.php with an embedded string and by requesting it with the template parameter did a Server-Side-Template-Injection.
+					<h3>Flag 7</h3>
+					In Grinches 7th app, a one that posts templated html pages, we were required to bypass another authorization. We first find out about the existance of hidden inputs and Alices test account. The template form uses markup and from the test page we see that there is a template variable declared and that it searches the template directory on the server.
+					We enumerate the directory simply by visiting it in a browser and find an interesting document 38dhs_admins_only_header.html. The file is accessible if we declare the template name to one of the declared keys in the hidden input by bypassing authorization.
+
+					<h3>Flag 8</h3>
+					For the 8th flag we needed to find the code in Grinches own github account(if we take that Adam who created the CTF was the grinch :D). After finding the code I decided too look at one of the changes to the code. Specifically the focus was on one small fix in Db.php. With info from it I was able to login into /phpmyadmin previously found with wfuzz and a wordlist from SecLists (commons.txt). 
+					When logged in we navigate to the user tab finding the username and the md5 hash of the password. The md5 hash was looked up in a rainbow table. With this info we were able to login into the Admin section and retrieve the flag.
+				</article>
+				<article>
+					Unfortunatelly before I finished the battle ended, but Christmas was saved thanks to the rest of Santas army. This was a motivational exercise and a venture to the front lines when I was not comfortable doing so. It was fun and I honestly can't wait for another CTF.
+					For a writeup of the finished CTF look at:
+					<a href="https://hackerone.com/reports/1069335">nytr0gen-s write up</a>
+				</article>
+				</p>
+
+			</div>
+		</section>
+		
+		<div class="contact">
+			<h3>Contact</h3>
+			<h4><a href="https://github.com/grng3r">Git</a></h4>
+			<h4>E-mail: grng3r@protonmail.com</h4>
+		</div>
+
+		<section id="news">
+			<h3>News</h3>
+			<article class="news1">
+				<p>Site still under construction, but some articles available</p>
+			</article>
+			<article class="news2">
+				<p>During the period of the COVID quarantines I am sharing an e-zine on my github. Feel free to head over there and have a look. Link available in menu --> Beta Vulgaris.</p>
+			</article>
+		</section>
+	</body>
+</html>

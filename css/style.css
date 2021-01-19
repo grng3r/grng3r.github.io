@@ -1,9 +1,8 @@
 @font-face{
-	font-family:"cyberpunk";
+	font-family:"cyberpunk", cursive;
 	src:url('../content/fonts/CIND.otf') format('opentype');
 }
 body{
-	font-family: "cyberpunk";
 	color: #9fffab;
 	background-color: #424242;
 	max-width: 100%;
@@ -27,7 +26,7 @@ body{
 }
 
 .about_txt p{
-	font-size: small;
+	font-size: medium;
 	text-align:right;
 	text-align:justify;
 }
@@ -35,6 +34,22 @@ body{
 .about_txt h2{
 	font-size: large;
 	text-align:left;
+}
+
+#articles{
+	border-left : 2px #9fffab dashed;
+	border-bottom : 2px #9fffab dashed;
+	padding: 30px 10px 30px 10px;;
+	max-width: 90%;
+	height: auto;
+}
+
+#article{
+	border-left : 2px #9fffab dashed;
+	border-bottom : 2px #9fffab dashed;
+	padding: 30px 10px 30px 10px;;
+	max-width: 90%;
+	height: auto;
 }
 
 
