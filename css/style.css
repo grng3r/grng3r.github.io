@@ -4,7 +4,8 @@
 }
 body{
 	color: #9fffab;
-	background-color: #424242;
+    background-color:black;
+    background-image: radial-gradient(rgba(60, 60, 60, 1), black 120%);
 	max-width: 100%;
 	padding: 30px 20px 0 10px;
 	height: auto;
@@ -105,7 +106,8 @@ header{
 	border-left: 2px #9fffab dashed;
 	border-bottom: 2px #9fffab dashed;
 	border-top: 2px #9fffab dashed;
-	background-color:#424242;
+    background-color:black;
+    background-image: radial-gradient(rgba(60, 60, 60, 1), black 120%);
 }
 
 header a{
