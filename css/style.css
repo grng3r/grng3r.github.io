@@ -2,8 +2,9 @@
 	font-family:"cyberpunk", cursive;
 	src:url('../content/fonts/CIND.otf') format('opentype');
 }
+
 body{
-	color: #9fffab;
+	color: white;
     background-color:black;
     background-image: radial-gradient(rgba(60, 60, 60, 1), black 120%);
 	max-width: 100%;
@@ -11,12 +12,18 @@ body{
 	height: auto;
 }
 
+
+
 #about{
-	border-left : 2px #9fffab dashed;
-	border-bottom : 2px #9fffab dashed;
+	border-left : 2px white dashed;
+	border-bottom : 2px white dashed;
 	padding: 30px 10px 30px 10px;;
 	max-width: 90%;
 	height: auto;
+}
+
+#about h2{
+    color: #9fffab
 }
 
 #about img{
@@ -33,21 +40,22 @@ body{
 }
 
 .about_txt h2{
+    colour: #9fffab
 	font-size: large;
 	text-align:left;
 }
 
 #articles{
-	border-left : 2px #9fffab dashed;
-	border-bottom : 2px #9fffab dashed;
-	padding: 30px 10px 30px 10px;;
+	border-left : 2px white dashed;
+	border-bottom : 2px white dashed;
+	padding: 30px 10px 30px 10px;
 	max-width: 90%;
 	height: auto;
 }
 
 #article{
-	border-left : 2px #9fffab dashed;
-	border-bottom : 2px #9fffab dashed;
+	border-left : 2px white dashed;
+	border-bottom : 2px white dashed;
 	padding: 30px 10px 30px 10px;;
 	max-width: 90%;
 	height: auto;
@@ -55,38 +63,34 @@ body{
 
 
 #news{
-	border-left : 2px #9fffab dashed;
-	border-bottom : 2px #9fffab dashed;
+	border-left : 2px white dashed;
+	border-bottom : 2px white dashed;
 	padding-top: 10px;
 	padding-left:10px;
 	max-width: 90%;
 	height: auto;
 }
 
+.news1 h3{
+    color: #9fffab;
+}
+
 .news1{
 	padding-top: 30px;
 	padding-left: 10px;
-	border-bottom: 2px #9fffab dotted;
-}
-
-
-.news2{
-	padding-top: 10px;
-	padding-left: 10px;
-
 }
 
 .contact{
 	width: 90%;
 	height: auto%;
-	border-bottom: 2px #9fffab dashed;
-	border-left: 2px #9fffab dashed;
+	border-bottom: 2px white dashed;
+	border-left: 2px white dashed;
 
 	padding-left: 10px;
 	padding-top: 30px;
 }
 
-.contact h4{
+.contact h3{
 	font-family: Tahoma, Geneva, sans-serif;
 	text-decoration: none;
 	color:#9fffab;
@@ -94,7 +98,7 @@ body{
 
 .contact a{
 	text-decoration: none;
-	color: #9fffab;
+	color: white;
 }
 
 header{
@@ -103,9 +107,9 @@ header{
 	min-height: 15px;
 	padding-bottom: 20px; 
 	padding-left: 10px;
-	border-left: 2px #9fffab dashed;
-	border-bottom: 2px #9fffab dashed;
-	border-top: 2px #9fffab dashed;
+	border-left: 2px white dashed;
+	border-bottom: 2px white dashed;
+	border-top: 2px white dashed;
     background-color:black;
     background-image: radial-gradient(rgba(60, 60, 60, 1), black 120%);
 }
